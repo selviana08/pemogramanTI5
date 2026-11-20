@@ -1,0 +1,45 @@
+:root {
+  --sidebar-width: 250px;
+  --active-menu: linear-gradient(to right, #6078d7, #140749);
+  --transition-speed: 0.3s;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
+#wrapper {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+#sidebar {
+  width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
+  transition: margin-left var(--transition-speed) ease;
+  z-index: 1050;
+}
+.sidebar-nav .nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.25rem;
+  margin: 0.2rem 0.75rem;
+  font-weight: 400;
+}
+.sidebar-nav .nav-link.active {
+  background: var(--active-menu);
+  color: white;
+}
+.sidebar-nav .nav-link:hover {
+  background-color: rgb(234, 234, 234);
+  color: rgb(198, 140, 5);
+}
+.sidebar-nav .menu-text {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+.sidebar-nav .nav-link:not(.active):hover .menu-text {
+  transform: translateX(5px);
+}
